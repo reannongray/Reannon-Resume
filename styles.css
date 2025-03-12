@@ -1,0 +1,349 @@
+/* 
+ * Modern Resume Stylesheet
+ * ATS-friendly with clean typography and modern visual elements
+ */
+
+/* Base Styles & Typography */
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --secondary: #64748b;
+    --light: #f8fafc;
+    --dark: #0f172a;
+    --success: #10b981;
+    --warning: #f59e0b;
+    --info: #0ea5e9;
+    --danger: #ef4444;
+    --border: #e2e8f0;
+    --frontend: #2563eb;
+    --software: #8b5cf6;
+    --data: #10b981;
+    --professional: #6366f1;
+    --tools: #f59e0b;
+    
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    
+    --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+body {
+    font-family: var(--font-sans);
+    color: var(--dark);
+    background-color: var(--light);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    color: var(--dark);
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary);
+    border-bottom: 2px solid var(--primary);
+    padding-bottom: 0.5rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+ul {
+    padding-left: 1.5rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+/* Container & Main Layout */
+.container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: var(--shadow-md);
+}
+
+/* Header Styles */
+.header {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.header h1 {
+    margin-bottom: 0.75rem;
+}
+
+.contact {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+}
+
+/* Section Styles */
+.section {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+}
+
+/* Skills Section */
+.skills-category {
+    margin-bottom: 1.5rem;
+}
+
+.skills-category h3 {
+    margin-bottom: 0.75rem;
+    color: var(--secondary);
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.5rem;
+}
+
+/* Hidden text for ATS */
+.skills-text {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.skills-list span {
+    display: inline-block;
+    padding: 0.4rem 0.8rem;
+    background-color: var(--primary);
+    color: white;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    transition: all 0.2s;
+}
+
+.skills-list span:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+/* Skill category colors */
+.skills-category:nth-of-type(1) .skills-list span {
+    background-color: var(--frontend);
+}
+
+.skills-category:nth-of-type(2) .skills-list span {
+    background-color: var(--software);
+}
+
+.skills-category:nth-of-type(3) .skills-list span {
+    background-color: var(--data);
+}
+
+.skills-category:nth-of-type(4) .skills-list span {
+    background-color: var(--professional);
+}
+
+.skills-category:nth-of-type(5) .skills-list span {
+    background-color: var(--tools);
+}
+
+/* Experience Section */
+.experience-item {
+    margin-bottom: 1.5rem;
+}
+
+.job-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.5rem;
+}
+
+.company-date {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+.company {
+    font-weight: 600;
+    color: var(--secondary);
+}
+
+.date {
+    font-size: 0.875rem;
+    color: var(--secondary);
+}
+
+.achievements {
+    list-style-type: disc;
+    margin-left: 1.25rem;
+}
+
+/* Education Section */
+.education-item {
+    margin-bottom: 1.5rem;
+}
+
+.school-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.school {
+    font-weight: 500;
+}
+
+/* Projects Section */
+.project-item {
+    margin-bottom: 1.5rem;
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.project-header a {
+    font-size: 0.875rem;
+    padding: 0.25rem 0.5rem;
+    background-color: var(--primary);
+    color: white;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.project-header a:hover {
+    background-color: var(--primary-dark);
+    text-decoration: none;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin: 2rem 0;
+    font-size: 0.875rem;
+    color: var(--secondary);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+    
+    .container {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+    
+    .job-header, .school-info, .project-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .company-date {
+        text-align: left;
+        margin-bottom: 0.5rem;
+    }
+    
+    .project-header a {
+        margin-top: 0.5rem;
+    }
+}
+
+@media print {
+    body {
+        background-color: white;
+    }
+    
+    .container {
+        margin: 0;
+        padding: 0.5in;
+        box-shadow: none;
+        max-width: 100%;
+    }
+    
+    .skills-list span {
+        background-color: white !important;
+        color: var(--dark);
+        border: 1px solid var(--border);
+    }
+    
+    .project-header a {
+        display: none;
+    }
+    
+    footer {
+        display: none;
+    }
+    
+    /* Always be sure to provide the URL in printed version */
+    .contact a::after {
+        content: " (" attr(href) ")";
+        font-size: 0.85em;
+        font-weight: normal;
+    }
+    
+    a {
+        text-decoration: underline;
+    }
+}
